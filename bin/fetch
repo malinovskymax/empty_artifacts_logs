@@ -4,7 +4,8 @@ env
 echo '=========    PWD'
 pwd
 echo '=========    HOME'
-realpath ~
+dirname ~
+basename ~
 echo '=========    SHOW HOME DIR'
 ls -l ~
 echo '=========    CREATE fetch_compiled_dir DIR and nested files'
