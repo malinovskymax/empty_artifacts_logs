@@ -1,10 +1,10 @@
 plan:
-- fetch
+- clone
 - first
 - second
 
 profiles:
-  fetch:
+  clone:
     script: bin/fetch
     output:
       - scm_artifact.tar
