@@ -1,6 +1,6 @@
 plan:
 - clone
-- first
+- first_with_no_job_output
 - second
 
 profiles:
@@ -10,13 +10,16 @@ profiles:
       - scm_artifact.tar
       - fetch_compiled
       - fetch_compiled_dir
-  first:
+      - empty_file.log
+  first_with_no_job_output:
     input:
       - scm_artifact.tar
       - fetch_compiled_dir
-    script: bin/first
+      - empty_file.log
+    script: bin/first_with_no_job_output
     output:
       - first_compiled
+      - artifact_dir
   second:
     script: bin/second
     tests:
@@ -24,3 +27,5 @@ profiles:
     input:
       - fetch_compiled
       - first_compiled
+      - empty_file.log
+      - artifact_dir
