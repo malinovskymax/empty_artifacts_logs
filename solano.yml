@@ -8,7 +8,7 @@ profiles:
     script: |
       set -e
       cp -r -p predefined_fetch_step_output_dir/* ./
-      bin/fetch
+      bin/prepare_repo
     input:
       - predefined_fetch_step_output_dir
     output:
@@ -21,12 +21,12 @@ profiles:
       - scm_artifact.tar
       - fetch_compiled_dir
       - bin
-    script: bin/first_with_no_job_output
+    script: bin/first_step
     output:
       - first_compiled
       - artifact_dir
   second_step:
-    script: bin/second
+    script: bin/second_step
     input:
       - fetch_compiled
       - first_compiled
