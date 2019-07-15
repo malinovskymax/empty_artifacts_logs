@@ -7,7 +7,7 @@ profiles:
   prepare_repo:
     script: |
       set -e
-      cp -r -p predefined_fetch_step_output_dir/* ./
+      cp -rp predefined_fetch_step_output_dir/* ./
       bin/prepare_repo
     input:
       - predefined_fetch_step_output_dir
