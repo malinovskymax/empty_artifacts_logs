@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 echo '=========    SHOW HOME DIR'
 ls -l
-touch empty_file.log
 echo '=========    CREATE fetch_compiled_dir DIR and nested files'
 mkdir fetch_compiled_dir
 echo "Some text here." > fetch_compiled_dir/myfile
