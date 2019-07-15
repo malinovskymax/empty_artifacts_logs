@@ -5,10 +5,10 @@ plan:
 
 profiles:
   clone:
-    script: cp -r -p source_code_repo/* ./ && bin/fetch
+    script: cp -r -p source_code_dir/* ./ && bin/fetch
     # Input from predefined fetch step
     input:
-      - source_code_repo
+      - source_code_dir
     output:
       - scm_artifact.tar
       - fetch_compiled
