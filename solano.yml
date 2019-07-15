@@ -1,37 +1,34 @@
 plan:
-- clone
-- first_with_no_job_output
-- second
+- prepare_repo
+- first_step
+- second_step
 
 profiles:
-  clone:
-    script: cp -r -p source_code_dir/* ./ && bin/fetch
-    # Input from predefined fetch step
+  prepare_repo:
+    script: |
+      set -e
+      cp -r -p predefined_fetch_step_output_dir/* ./
+      bin/fetch
     input:
-      - source_code_dir
+      - predefined_fetch_step_output_dir
     output:
       - scm_artifact.tar
       - fetch_compiled
       - fetch_compiled_dir
-      - empty_file.log
       - bin
-  first_with_no_job_output:
+  first_step:
     input:
       - scm_artifact.tar
       - fetch_compiled_dir
-      - empty_file.log
       - bin
     script: bin/first_with_no_job_output
     output:
       - first_compiled
       - artifact_dir
-  second:
+  second_step:
     script: bin/second
-    tests:
-      - bin/second
     input:
       - fetch_compiled
       - first_compiled
-      - empty_file.log
       - artifact_dir
       - bin
