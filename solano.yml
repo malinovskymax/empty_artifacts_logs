@@ -19,7 +19,7 @@ profiles:
       - scm_artifact.tar
       - fetch_compiled_dir
       - empty_file.log
-    script: bin/first_with_no_job_output
+    script: pwd && ls && bin/first_with_no_job_output
     output:
       - first_compiled
       - artifact_dir
