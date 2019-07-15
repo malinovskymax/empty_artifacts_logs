@@ -14,12 +14,14 @@ profiles:
       - fetch_compiled
       - fetch_compiled_dir
       - empty_file.log
+      - bin
   first_with_no_job_output:
     input:
       - scm_artifact.tar
       - fetch_compiled_dir
       - empty_file.log
-    script: pwd && ls && bin/first_with_no_job_output
+      - bin
+    script: bin/first_with_no_job_output
     output:
       - first_compiled
       - artifact_dir
@@ -32,3 +34,4 @@ profiles:
       - first_compiled
       - empty_file.log
       - artifact_dir
+      - bin
