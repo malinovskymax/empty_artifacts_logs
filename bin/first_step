@@ -8,6 +8,4 @@ echo "Some text first compiled  here." > first_compiled
 # echo '=========    SHOW HOME DIR again'
 # ls -l
 
-mkdir 'artifact_dir'
-
-exit 0
+mkdir artifact_dir
