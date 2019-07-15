@@ -2,8 +2,5 @@
 echo '=========    SHOW HOME DIR'
 ls -l
 
-# error if empty_file.log is not present
-cp empty_file.log empty_file_new.log
-
 # error if artifact_dir is not present
 cd artifact_dir
