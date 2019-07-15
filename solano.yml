@@ -6,6 +6,9 @@ plan:
 profiles:
   clone:
     script: bin/fetch
+    # Input from predefined fetch step
+    input:
+      - source_code_repo
     output:
       - scm_artifact.tar
       - fetch_compiled
