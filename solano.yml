@@ -1,9 +1,8 @@
-plan:
-- prepare_repo
-- first_step
-- second_step
+pipeline:
+  prepare_repo:
+    first_step: second_step
 
-profiles:
+steps:
   prepare_repo:
     script: |
       set -e
