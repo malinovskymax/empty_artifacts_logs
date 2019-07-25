@@ -17,13 +17,15 @@ steps:
       - bin
   first_step:
     input:
-      - scm_artifact.tar
-      - fetch_compiled_dir
-      - bin
-    script: bin/first_step
-    output:
-      - first_compiled
-      - artifact_dir
+      - predefined_fetch_step_output_dir
+      #- scm_artifact.tar
+      #- fetch_compiled_dir
+      #- bin
+#     script: bin/first_step
+    script: ls && echo 'First step finished!'
+    #output:
+    #  - first_compiled
+    #  - artifact_dir
   second_step:
     script: bin/second_step
     input:
