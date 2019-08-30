@@ -22,7 +22,7 @@ steps:
 #     - fetch_compiled_dir
 #     - bin
 #     script: bin/first_step
-      script: ls && echo 'First step finished!'
+    script: ls && echo 'First step finished!'
     output:
      - first_compiled
      - artifact_dir
