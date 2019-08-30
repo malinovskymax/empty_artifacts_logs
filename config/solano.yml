@@ -4,30 +4,10 @@ pipeline:
 
 steps:
   prepare_repo:
-    script: |
-      set -e
-      cp -rp predefined_fetch_step_output_dir/* ./
-      bin/prepare_repo
+    script: ls && echo 'Prepare repo step finished!'
+  first_step:
+    script: ls && echo 'First step finished!'
+  second_step:
+    script: ls && echo 'Second step finished!'
     input:
       - predefined_fetch_step_output_dir
-    output:
-      - scm_artifact.tar
-      - fetch_compiled
-      - fetch_compiled_dir
-      - bin
-  first_step:
-    input:
-      - scm_artifact.tar
-      - fetch_compiled_dir
-      - bin
-    script: bin/first_step
-    output:
-      - first_compiled
-      - artifact_dir
-  second_step:
-    script: bin/second_step
-    input:
-      - fetch_compiled
-      - first_compiled
-      - artifact_dir
-      - bin
